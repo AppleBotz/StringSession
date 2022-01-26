@@ -43,10 +43,10 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         )
     elif query == "generate":
         await callback_query.message.reply(
-            "sɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ sᴛʀɪɴɢ ᴍᴀɴᴀ ʏᴀɴɢ ɪɴɢɪɴ ᴋᴀᴍᴜ ᴀᴍʙɪʟ​",
+            "Choose String what You Wanna Generate​",
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("ᴘʏʀᴏɢʀᴀᴍ​", callback_data="pyrogram"),
-                InlineKeyboardButton("ᴛᴇʟᴇᴛʜᴏɴ​", callback_data="telethon")
+                InlineKeyboardButton("Pyrogram​", callback_data="pyrogram"),
+                InlineKeyboardButton("Telethon​", callback_data="telethon")
             ]])
         )
     elif query in ["pyrogram", "telethon"]:
