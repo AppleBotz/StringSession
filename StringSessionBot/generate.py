@@ -30,16 +30,16 @@ ERROR_MESSAGE = "Oops! An exception occurred! \n\n**Error** : {} " \
 @Client.on_message(filters.private & ~filters.forwarded & filters.command('generate'))
 async def main(_, msg):
     await msg.reply(
-        "Silahkan Tekan String(penghubung akun ke bot) Mana Yang Ingin Kamu Ambil",
+        "Choose session !\nPlease choose which session you want to make...\n\nex : Pyrogram",
         reply_markup=InlineKeyboardMarkup([[
-            InlineKeyboardButton("String P", callback_data="pyrogram"),
-            InlineKeyboardButton("String T", callback_data="telethon")
+            InlineKeyboardButton("Pyrogram", callback_data="pyrogram"),
+            InlineKeyboardButton("Telethon", callback_data="telethon")
         ]])
     )
 
 
 async def generate_session(bot, msg, telethon=False):
-    await msg.reply("Memulai {} Session Generation...".format("Telethon" if telethon else "Pyrogram"))
+    await msg.reply("Start {} Session Generation...".format("Telethon" if telethon else "Pyrogram"))
     user_id = msg.chat.id
     api_id_msg = await bot.ask(user_id, 'Send Your  `API_ID`', filters=filters.text)
     if await cancelled(api_id_msg):
