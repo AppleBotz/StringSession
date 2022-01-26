@@ -6,35 +6,35 @@ class Data:
     START = """
 Halo {}
 
-Selamat datang {}
+Welcome to {}
 
-Jika kamu tidak percaya bot ini, 
-1) gausah baca pesan ini
-2) blokir bot atau delete chat
+Bot to create string telegram , 
+1) pyrogram
+2) telethon
 
-Bot ini Bekerja Untuk Membantu Kamu Mendapatkan String Session Via Bot. Rekomendasi Jika Ingin Mengambil String Gunakan Akun Lain, Agar Tidak Delay. Terimakasih
-By @Telegram
+This bot works to make it easier to get a string session via bot.
+By @Stringsessessontelegrambot
     """
 
     # Home Button
     home_buttons = [
-        [InlineKeyboardButton("sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ​", callback_data="generate")],
-        [InlineKeyboardButton(text="ʙᴀᴄᴋ​", callback_data="home")]
+        [InlineKeyboardButton("🆕 Start​", callback_data="generate")],
+        [InlineKeyboardButton(text="⚙️ Home​", callback_data="home")]
     ]
 
     generate_button = [
-        [InlineKeyboardButton("sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ", callback_data="generate")]
+        [InlineKeyboardButton("Start Generate Session", callback_data="generate")]
     ]
 
     # Rest Buttons
     buttons = [
-        [InlineKeyboardButton("sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ", callback_data="generate")],
-        [InlineKeyboardButton("ᴍᴀɪɴᴛᴀɴᴇᴅ ʙʏ​", url="https://t.me/telegram")],
+        [InlineKeyboardButton("Start Generate Session", callback_data="generate")],
+        [InlineKeyboardButton("Maintaned By ​", url="https://t.me/telegram")],
         [
-            InlineKeyboardButton("ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ​​", callback_data="help"),
-            InlineKeyboardButton("ᴀʙᴏᴜᴛ​", callback_data="about")
+            InlineKeyboardButton("How To Use Me​​", callback_data="help"),
+            InlineKeyboardButton("About Me​", callback_data="about")
         ],
-        [InlineKeyboardButton("ɪɴꜰᴏ ʙᴏᴛ ʟᴀɪɴɴʏᴀ​", url="https://t.me/telegram")],
+        [InlineKeyboardButton("Info Other Bot​", url="https://t.me/AppleBotz")],
     ]
 
     # Help Message
@@ -53,13 +53,10 @@ By @Telegram
     ABOUT = """
 **About This Bot** 
 
-Sebuah telegram bot untuk mengambil pyrogram dan telethon string session by @AkunToBot
+Sebuah telegram bot untuk mengambil pyrogram dan telethon string session by @Stringsessiontelegrambot
 
 Group Support : [Gabung](https://t.me/Telegram)
-
 Framework : [Pyrogram](docs.pyrogram.org)
-
 Language : [Python](www.python.org)
-
 Developer : @Telegram
     """
