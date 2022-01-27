@@ -13,7 +13,7 @@ Bot to create string telegram ,
 2) telethon
 
 This bot works to make it easier to get a string session via bot.
-By @Stringsessessontelegrambot
+By @Stringsessiontelegrambot
     """
 
     # Home Button
