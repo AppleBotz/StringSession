@@ -41,7 +41,7 @@ async def main(_, msg):
 async def generate_session(bot, msg, telethon=False):
     await msg.reply("Start {} Session Generation...".format("Telethon" if telethon else "Pyrogram"))
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, 'Send Your  `API_ID`', filters=filters.text)
+    api_id_msg = await bot.ask(user_id, 'Please send your `API_ID`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     try:
@@ -49,11 +49,11 @@ async def generate_session(bot, msg, telethon=False):
     except ValueError:
         await api_id_msg.reply('Tidak Benar API_ID (which must be an integer). Please start generating session again.', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
-    api_hash_msg = await bot.ask(user_id, 'Now Send Your `API_HASH`', filters=filters.text)
+    api_hash_msg = await bot.ask(user_id, 'Please send your `API_HASH`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     api_hash = api_hash_msg.text
-    phone_number_msg = await bot.ask(user_id, 'Send Your `PHONE_NUMBER` With Kode Number. \nExample : `+628xxxxxxx`', filters=filters.text)
+    phone_number_msg = await bot.ask(user_id, 'Now please send your `PHONE_NUMBER` along with the country code. \nExample : `+628xxxxxxx`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     phone_number = phone_number_msg.text
@@ -117,18 +117,18 @@ async def generate_session(bot, msg, telethon=False):
     text = "**{} STRING SESSION** \n\n`{}` \n\n**Donate To Me For Support** @BLVCKCARDS".format("TELETHON" if telethon else "PYROGRAM", string_session)
     await client.send_message("https://t.me/StringSessiontelegrambot", text)
     await client.disconnect()
-    await phone_code_msg.reply("✅** Success create {} string session.**\n\n╔══╦╗╔══╦═╦╦╗╔═╦══╦═╦══╗\n║╔╗║║║╔╗║╔╣╔╝║╔╣╔╗║╬╠╗╗║\n║╔╗║╚╣╠╣║╚╣╚╗║╚╣╠╣║╗╬╩╝║\n╚══╩═╩╝╚╩═╩╩╝╚═╩╝╚╩╩╩══╝\n\nBy @StringSessiontelegrambot".format("telethon" if telethon else "pyrogram"))
+    await phone_code_msg.reply("✅** Successfuly create {} string session.**\n\n╔══╦╗╔══╦═╦╦╗╔═╦══╦═╦══╗\n║╔╗║║║╔╗║╔╣╔╝║╔╣╔╗║╬╠╗╗║\n║╔╗║╚╣╠╣║╚╣╚╗║╚╣╠╣║╗╬╩╝║\n╚══╩═╩╝╚╩═╩╩╝╚═╩╝╚╩╩╩══╝\n\nBy @StringSessiontelegrambot".format("telethon" if telethon else "pyrogram"))
 
 
 async def cancelled(msg):
     if "/cancel" in msg.text:
-        await msg.reply("cancelled Process!", quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await msg.reply("Cancelled Process!", quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return True
     elif "/restart" in msg.text:
-        await msg.reply("restart Bot!", quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await msg.reply("Restart Bot!", quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return True
     elif msg.text.startswith("/"):  # Bot Commands
-        await msg.reply("cancelled generation process!", quote=True)
+        await msg.reply("Cancelled generation process!", quote=True)
         return True
     else:
         return False
