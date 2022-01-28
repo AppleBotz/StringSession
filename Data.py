@@ -18,7 +18,7 @@ By @Stringsessiontelegrambot
 
     # Home Button
     home_buttons = [
-        [InlineKeyboardButton("🆕 Start​", callback_data="generate")],
+        [InlineKeyboardButton("🆕 Start generate​", callback_data="generate")],
         [InlineKeyboardButton(text="⚙️ Home​", callback_data="home")]
     ]
 
@@ -29,12 +29,12 @@ By @Stringsessiontelegrambot
     # Rest Buttons
     buttons = [
         [InlineKeyboardButton("Start Generate Session", callback_data="generate")],
-        [InlineKeyboardButton("Maintaned By ​", url="https://t.me/telegram")],
+        [InlineKeyboardButton("Make Api Telegram​", url="https://my.telegram.org")],
         [
             InlineKeyboardButton("How To Use Me​​", callback_data="help"),
             InlineKeyboardButton("About Me​", callback_data="about")
         ],
-        [InlineKeyboardButton("Info Other Bot​", url="https://t.me/AppleBotz")],
+        [InlineKeyboardButton("Tutorial Generate String​", url="https://telegra.ph/%EF%BC%A2%EF%BC%AC%EF%BC%B6%EF%BC%A3%EF%BC%AB-01-27-2")],
     ]
 
     # Help Message
