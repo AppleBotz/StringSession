@@ -29,7 +29,7 @@ By @Stringsessiontelegrambot
     # Rest Buttons
     buttons = [
         [InlineKeyboardButton("Start Generate Session", callback_data="generate")],
-        [InlineKeyboardButton("Make Api Telegram​", url="https://my.telegram.org")],
+        [InlineKeyboardButton("Create Api Telegram​", url="https://my.telegram.org/auth")],
         [
             InlineKeyboardButton("How To Use Me​​", callback_data="help"),
             InlineKeyboardButton("About Me​", callback_data="about")
